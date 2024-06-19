@@ -21,3 +21,32 @@ const questions=[{
 
 
 ]
+
+
+const inputUsername=document.querySelector(".username");
+const startQuizButton=document.querySelector(".startQuiz");
+const quizC=document.querySelector("#quiz");
+const login=document.querySelector("#login");
+let username='';
+
+startQuizButton.addEventListener("click",startQuiz);
+
+
+function  startQuiz(){
+
+  username=inputUsername.value.trim();
+
+
+  if(username){
+
+    localStorage.setItem('username',username);
+    login.style.display="none";
+    quizC.style.display="block";
+
+  }else{
+    alert("Please enter an username");
+  }
+
+
+}
+
