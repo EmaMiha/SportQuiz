@@ -3,9 +3,9 @@ const questions=[{
     answers:[
 
         { text: 'Jonas Vingegaard',correct:true},
-        { text: '',correct:false},
-        { text: '',correct:false},
-        { text: '',correct:false},
+        { text: 'Tadej Pogačar',correct:false},
+        { text: 'Geraint Thomas',correct:false},
+        { text: 'Egan Bernal',correct:false},
     ]
 },
 {
@@ -209,6 +209,9 @@ let username='';
 
 startQuizButton.addEventListener("click",startQuiz);
 
+/**
+ * Getting and checking the username and starting the quiz. 
+ */
 
 function  startQuiz(){
 
