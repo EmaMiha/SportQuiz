@@ -205,9 +205,16 @@ const inputUsername=document.querySelector(".username");
 const startQuizButton=document.querySelector(".startQuiz");
 const quizC=document.querySelector("#quiz");
 const login=document.querySelector("#login");
+
+
 let username='';
+let currentQuestionIndex;
+let pastQuestions = [];
+
 
 startQuizButton.addEventListener("click",startQuiz);
+
+
 
 /**
  * Getting and checking the username and starting the quiz. 
@@ -229,5 +236,24 @@ function  startQuiz(){
   }
 
 
+}
+
+/**
+ * Creating a random questions.
+ */
+function nextQuestion () {
+  let rand;
+
+  while (true) {
+
+    rand = Math.floor(Math.random() * questions.length);
+
+    if (pastQuestions.includes(rand)) {
+      pastQuestions.push(rand);
+      break;
+    }
+  }
+
+  showQuestion(rand);
 }
 
