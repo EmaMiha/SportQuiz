@@ -201,10 +201,10 @@ const questions=[{
 ]
 
 
-const inputUsername=document.querySelector(".username");
-const startQuizButton=document.querySelector(".startQuiz");
-const quizC=document.querySelector("#quiz");
-const login=document.querySelector("#login");
+const inputUsername = document.querySelector(".username");
+const startQuizButton = document.querySelector(".startQuiz");
+const quizC = document.querySelector("#quiz");
+const login = document.querySelector("#login");
 const question = document.querySelector(".question");
 const answers = document.querySelector(".answers");
 const nextQ = document.querySelector(".nextQuestion");
@@ -213,38 +213,45 @@ const result = document.querySelector("#results")
 
 
 
-let username='';
+let username = '';
 let currentQuestionIndex;
 let pastQuestions = [];
+let correctAnswer = 0;
 
 
-startQuizButton.addEventListener("click",startQuiz);
+
+startQuizButton.addEventListener("click", startQuiz);
 nextQ.addEventListener("click", nextQuestion);
 
 
-/**
- * Getting and checking the username and starting the quiz. 
- */
+function startQuiz() {
 
-function  startQuiz(){
+  username = inputUsername.value.trim();
 
-  username=inputUsername.value.trim();
-
-  if(username){
-
-    localStorage.setItem('username',username);
-    login.style.display="none";
-    quizC.style.display="block";
-
-  }else{
+  if (username) {
+    localStorage.setItem('username', username);
+    login.style.display = "none";
+    quizC.style.display = "block";
+    nextQuestion(1);
+  } else {
     alert("Please enter an username");
   }
 }
 
-/**
- * Creates a random next questions.
- */
-function nextQuestion () {
+
+function nextQuestion(n) {
+
+  if(n!=1)
+{
+
+  let rb=document.querySelectorAll("input[type='radio']:checked");
+
+  if (rb.length==0){
+    alert("Choose the answer!");
+    return;
+  }
+
+}  
   let rand;
 
   if (pastQuestions.length == questions.length) {
@@ -253,24 +260,22 @@ function nextQuestion () {
     result.style.display = 'block';
     localStorage.setItem()
     return;
-  }  
-
+  }
   while (true) {
+
 
     rand = Math.floor(Math.random() * questions.length);
 
-    if (pastQuestions.includes(rand)) {
+
+
+
+    if (!pastQuestions.includes(rand)) {
       pastQuestions.push(rand);
       break;
     }
   }
   showQuestion(rand);
 }
-
-
-/**
- *  Creates a question view and radio button. 
- */
 
 function showQuestion(rand) {
 
