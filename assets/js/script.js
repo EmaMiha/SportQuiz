@@ -205,6 +205,10 @@ const inputUsername=document.querySelector(".username");
 const startQuizButton=document.querySelector(".startQuiz");
 const quizC=document.querySelector("#quiz");
 const login=document.querySelector("#login");
+const question = document.querySelector(".question");
+const answers = document.querySelector(".answers");
+const nextQ = document.querySelector(".nextQuestion");
+
 
 
 let username='';
@@ -213,7 +217,7 @@ let pastQuestions = [];
 
 
 startQuizButton.addEventListener("click",startQuiz);
-
+nextQ.addEventListener("click", nextQuestion);
 
 
 /**
@@ -224,7 +228,6 @@ function  startQuiz(){
 
   username=inputUsername.value.trim();
 
-
   if(username){
 
     localStorage.setItem('username',username);
@@ -234,15 +237,21 @@ function  startQuiz(){
   }else{
     alert("Please enter an username");
   }
-
-
 }
 
 /**
- * Creating a random questions.
+ * Creates a random next questions.
  */
 function nextQuestion () {
   let rand;
+
+  if (pastQuestions.length == questions.length) {
+    alert("No more answers!");
+    score.textContent = correctAnswer;
+    result.style.display = 'block';
+    localStorage.setItem()
+    return;
+  }  
 
   while (true) {
 
@@ -253,7 +262,7 @@ function nextQuestion () {
       break;
     }
   }
-
   showQuestion(rand);
 }
+
 
