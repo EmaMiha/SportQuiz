@@ -266,3 +266,38 @@ function nextQuestion () {
 }
 
 
+/**
+ *  Creates a question view and radio buttons. 
+ */
+
+function showQuestion(rand) {
+
+  question.textContent = questions[rand].question;
+  let num = 0;
+  answers.textContent = "";
+  questions[rand].answers.forEach(function (answer) {
+
+    const container = document.createElement("div");
+
+    const rbutton = document.createElement("input");
+    rbutton.type = "radio";
+    rbutton.name = "quiz";
+    rbutton.value = num++;
+    rbutton.id = "tt" + num++;
+
+
+
+    const label = document.createElement("label");
+    label.htmlFor = "tt" + num++;
+    label.textContent = answer.text;
+
+    container.appendChild(rbutton);
+    container.appendChild(label);
+
+    answers.appendChild(container);
+
+
+
+  }
+
+}
