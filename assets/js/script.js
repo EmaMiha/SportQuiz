@@ -208,6 +208,8 @@ const login=document.querySelector("#login");
 const question = document.querySelector(".question");
 const answers = document.querySelector(".answers");
 const nextQ = document.querySelector(".nextQuestion");
+const score = document.querySelector(".score");
+const result = document.querySelector("#results")
 
 
 
@@ -267,12 +269,13 @@ function nextQuestion () {
 
 
 /**
- *  Creates a question view and radio buttons. 
+ *  Creates a question view and radio button. 
  */
 
 function showQuestion(rand) {
 
   question.textContent = questions[rand].question;
+
   let num = 0;
   answers.textContent = "";
   questions[rand].answers.forEach(function (answer) {
@@ -286,18 +289,29 @@ function showQuestion(rand) {
     rbutton.id = "tt" + num++;
 
 
+    rbutton.addEventListener("change", function () {
+
+      if (answer.correct == true) {
+
+        alert("Correct!");
+        correctAnswer++;
+
+      } else {
+        alert("Wrong");
+      }
+
+    })
 
     const label = document.createElement("label");
     label.htmlFor = "tt" + num++;
     label.textContent = answer.text;
 
+
     container.appendChild(rbutton);
     container.appendChild(label);
 
+
     answers.appendChild(container);
 
-
-
-  }
-
+  })
 }
