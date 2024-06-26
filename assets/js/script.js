@@ -211,6 +211,7 @@ const score = document.querySelector(".score");
 const result = document.querySelector("#results")
 const previousS = document.querySelector("#previousScores");
 const feedback=document.querySelector(".feedback");
+const restart=document.querySelector(".restartQuiz");
 
 let username = '';
 let currentQuestionIndex;
@@ -218,7 +219,7 @@ let pastQuestions = [];
 let correctAnswer = 0;
 
 
-
+restart.addEventListener("click",restartQuiz);
 startQuizButton.addEventListener("click", startQuiz);
 
 /**
@@ -318,7 +319,7 @@ function showQuestion(rand) {
         feedback.textContent="Correct answer!!!!"
         rbutton.nextElementSibling.style.color = "green";
         correctAnswer++;
-        score.textContent=correctAnswer;
+        score.textContent=correctAnswer.toString();
         setTimeout(function () {
 
 
@@ -329,6 +330,7 @@ function showQuestion(rand) {
 
       } else {
          feedback.textContent= `Wrong  answer :( `;
+         score.textContent=correctAnswer.toString();
         rbutton.nextElementSibling.style.color = "red"
         setTimeout(function () {
 
@@ -404,3 +406,10 @@ function writePreviousScore(previousScore) {
 }
 
 
+function restartQuiz(){
+
+  correctAnswer=0;
+  login.style.display="block";
+  quizC.style.display="none";
+
+}
