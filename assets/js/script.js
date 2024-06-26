@@ -341,3 +341,36 @@ writePreviousScore(previousScore);
 
 init();
 
+/**
+ * Writes all high scores per username from local storage.
+ */
+
+function writePreviousScore(previousScore) {
+
+  if (previousScore.length==0){
+    previousS.textContent="No results!";
+    return;
+    }
+
+    let html=`<table>
+<tr>
+<th>Username</th>
+<th>Points</th>
+</tr>
+`;
+
+previousScore.forEach(elem=>{
+
+html+=`<tr>
+<td>${elem.user}</td>
+<td>${elem.score}</td>
+</tr>`
+
+})
+html+=`</table>`;
+
+previousS.innerHTML=html;
+
+}
+
+
