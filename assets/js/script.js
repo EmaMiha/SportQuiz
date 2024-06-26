@@ -210,7 +210,7 @@ const answers = document.querySelector(".answers");
 const nextQ = document.querySelector(".nextQuestion");
 const score = document.querySelector(".score");
 const result = document.querySelector("#results")
-
+const previousS=document.querySelector("#previousScores");
 
 
 let username = '';
@@ -221,7 +221,10 @@ let correctAnswer = 0;
 
 
 startQuizButton.addEventListener("click", startQuiz);
-nextQ.addEventListener("click", nextQuestion);
+nextQ.addEventListener("click", function(){
+
+  nextQuestion(2);
+});
 
 
 function startQuiz() {
@@ -240,11 +243,11 @@ function startQuiz() {
 
 
 function nextQuestion(n) {
-
   if(n!=1)
 {
 
   let rb=document.querySelectorAll("input[type='radio']:checked");
+
 
   if (rb.length==0){
     alert("Choose the answer!");
@@ -320,3 +323,21 @@ function showQuestion(rand) {
 
   })
 }
+
+/**
+ * Initialization function on load application
+ */
+
+function init() {
+  let  previousScore=JSON.parse(localStorage.getItem("previous"));
+
+if (!previousScore){
+  localStorage.setItem("previous",JSON.stringify([]));
+}
+
+writePreviousScore(previousScore);
+
+}
+
+init();
+
