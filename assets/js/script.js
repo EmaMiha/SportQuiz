@@ -261,7 +261,16 @@ function nextQuestion(n) {
     alert("No more answers!");
     score.textContent = correctAnswer;
     result.style.display = 'block';
-    localStorage.setItem()
+    let  previousScore=JSON.parse(localStorage.getItem("previous"));
+    let user=localStorage.getItem('username');
+    previousScore.push({user:user,score:correctAnswer});
+    // save each result in local storage and sorting from largest to smallest and all scores are displayed regardless of username
+    previousScore.sort(function(a,b){
+
+      return b-a;
+    })
+    localStorage.setItem("previous",JSON.stringify(previousScore));
+    writePreviousScore(previousScore);
     return;
   }
   while (true) {
