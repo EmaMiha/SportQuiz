@@ -236,6 +236,8 @@ function startQuiz() {
     localStorage.setItem('username', username);
     login.style.display = "none";
     quizC.style.display = "block";
+    previousS.display="none";
+    feedback.style.display="block";
     nextQuestion(1);
   } else {
     alert("Please enter an username");
@@ -265,12 +267,13 @@ function nextQuestion(n) {
 
   if (pastQuestions.length == questions.length) {
     inputUsername.value='';
-    feedback.textContent = "No more questions!Please enter username for another game!"
     quizC.style.display = "none";
     restart.style.display="none";
-    score.textContent = correctAnswer;
+    score.textContent = "Your final score is "+correctAnswer.toString();
     result.style.display = 'block';
     login.style.display = "block";
+    previousS.style.display="block";
+    feedback.style.display="none";
     let previousScore = JSON.parse(localStorage.getItem("previous"));
     let user = localStorage.getItem('username');
     previousScore.push({ user: user, score: correctAnswer });
@@ -346,7 +349,7 @@ function showQuestion(rand) {
         rbutton.nextElementSibling.style.color = "green";
         correctAnswer++;
 
-        score.textContent = correctAnswer.toString();
+        score.textContent ="Your score "+ correctAnswer.toString();
         setTimeout(function () {
 
 
@@ -363,7 +366,7 @@ function showQuestion(rand) {
         img.style.height="30px";
         feedback.appendChild(img);
 
-        score.textContent = correctAnswer.toString();
+        score.textContent ="Your score :"+ correctAnswer.toString();
         rbutton.nextElementSibling.style.color = "red"
         setTimeout(function () {
 
@@ -455,8 +458,9 @@ function restartQuiz() {
   }
 
   correctAnswer = 0;
-  score.textContent = correctAnswer;
+  score.textContent ="Your score:" +correctAnswer;
   pastQuestions=[];
   nextQuestion(1);
+  previousS.display="none";
 
 }

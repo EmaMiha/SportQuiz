@@ -44,4 +44,87 @@ a{
     border-radius: 5%;
     box-shadow: 0px 0px 5px 20px green;   
 }
+#login{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login input {
+    margin-right: 10px;
+    width: 50%;
+    height: 30px;
+    border: none;
+    box-shadow: 0 0 5px black;
 
+}
+#login button{
+
+    width: 15%;
+    height: 30px;
+    border: none;
+    box-shadow: 0 0 5px black;
+    
+}
+
+
+#quiz,#login,.feedback,#results,#previousScores,#hed{
+
+width: 60%;
+background-color: #FF5A00FF;
+text-align: center;
+
+}
+
+
+#quiz{
+    background-color: aqua;
+    border: 4px solid blueviolet;
+    height: 50%;     
+}
+.quizContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.question{
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.answers{
+
+    width: 60%;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.answers input{
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+#previousScores{
+
+    overflow: scrolll;
+    display: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+
+
+
+}
+
+.feedback{
+
+    display: none;
+    height: 10%;
+}
