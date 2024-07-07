@@ -272,7 +272,7 @@ function nextQuestion(n) {
     score.textContent = "Your final score is "+correctAnswer.toString();
     result.style.display = 'block';
     login.style.display = "block";
-    previousS.style.display="block";
+    previousS.style.display="flex";
     feedback.style.display="none";
     let previousScore = JSON.parse(localStorage.getItem("previous"));
     let user = localStorage.getItem('username');
@@ -343,6 +343,7 @@ function showQuestion(rand) {
         let img = document.createElement("img");
         img.src = "assets/img/correct.png";
         img.alt = "correct";
+        img.classList.add('picx');
         img.style.width="30px";
         img.style.height="30px";
         feedback.appendChild(img);
@@ -362,6 +363,8 @@ function showQuestion(rand) {
         let img = document.createElement("img");
         img.src = "assets/img/wrong.png";
         img.alt = "correct";
+        img.classList.add('picx');
+
         img.style.width="30px";
         img.style.height="30px";
         feedback.appendChild(img);
@@ -422,7 +425,7 @@ init();
 
 function writePreviousScore(previousScore) {
 
-  if (previousScore.length == 0) {
+  if (previousScore.length == 0  || previousScore==null) {
     previousS.textContent = "No results!";
     return;
   }
@@ -441,15 +444,20 @@ function writePreviousScore(previousScore) {
 
   })
   
-  let html = `<h2>Best 5 scores</h2><table>
+  let html = `<h2>Best 5 scores</h2>
+  <table class="psscore">
 <tr>
 <th>Username</th>
 <th>Points</th>
 </tr>
 `;
 
- for(let i=0;i<5;i++){
+let count=0;
+ for(let i=0;i<previousScore.length;i++){
 
+  if (count==5){
+    break;
+  }
 
 
     html += `<tr>
@@ -457,7 +465,7 @@ function writePreviousScore(previousScore) {
 <td>${previousScore[i].score}</td>
 </tr>`
 
-
+count++;
  }
   html += `</table>`;
 
