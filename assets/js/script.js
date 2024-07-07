@@ -172,10 +172,10 @@ const questions = [{
   question: 'Which of the following sports does not use a ball?',
   answers: [
 
-    { text: 'tennis', correct: false },
-    { text: 'polo', correct: false },
-    { text: 'golf', correct: false },
-    { text: 'hockey', correct: true },
+    { text: 'Tennis', correct: false },
+    { text: 'Polo', correct: false },
+    { text: 'Golf', correct: false },
+    { text: 'Hockey', correct: true },
   ]
 },
 {
@@ -427,21 +427,38 @@ function writePreviousScore(previousScore) {
     return;
   }
 
-  let html = `<table>
+  previousScore.sort((a,b)=>{
+
+    if (b.score>a.score){
+      return 1;
+    }
+    if (a.score>b.score){
+      return -1;
+    }
+    if(a.score==b.score){
+      return 0;
+    }
+
+  })
+  
+  let html = `<h2>Best 5 scores</h2><table>
 <tr>
 <th>Username</th>
 <th>Points</th>
 </tr>
 `;
 
-  previousScore.forEach(elem => {
+ for(let i=0;i<5;i++){
+
+
 
     html += `<tr>
-<td>${elem.user}</td>
-<td>${elem.score}</td>
+<td>${previousScore[i].user}</td>
+<td>${previousScore[i].score}</td>
 </tr>`
 
-  })
+
+ }
   html += `</table>`;
 
   previousS.innerHTML = html;
