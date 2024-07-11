@@ -198,7 +198,7 @@ const questions = [{
     { text: '2004', correct: true },
   ]
 },
-]
+];
 
 
 const inputUsername = document.querySelector(".username");
@@ -215,7 +215,6 @@ const restart = document.querySelector(".restartQuiz");
 
 
 let username = '';
-let currentQuestionIndex;
 let pastQuestions = [];
 let correctAnswer = 0;
 
@@ -230,6 +229,9 @@ startQuizButton.addEventListener("click", startQuiz);
 function startQuiz() {
 
   username = inputUsername.value.trim();
+  correctAnswer=0;
+  score.textContent ="Your score: "+ correctAnswer.toString();
+  previousS.style.display="none";
 
   if (username) {
     pastQuestions = [];
@@ -280,7 +282,7 @@ function nextQuestion(n) {
     previousScore.sort(function (a, b) {
 
       return b - a;
-    })
+    });
     localStorage.setItem("previous", JSON.stringify(previousScore));
     writePreviousScore(previousScore);
     return;
@@ -309,7 +311,7 @@ function showQuestion(rand) {
   if (rbut){
   rbut.forEach(elem=>{
     elem.disabled=false;
-  })
+  });
 }
 
 
@@ -335,7 +337,7 @@ function showQuestion(rand) {
       let rbut=document.querySelectorAll(".rbut");
       rbut.forEach(elem=>{
         elem.disabled=true;
-      })
+      });
 
 
       if (answer.correct == true) {
@@ -350,7 +352,7 @@ function showQuestion(rand) {
         rbutton.nextElementSibling.style.color = "green";
         correctAnswer++;
 
-        score.textContent ="Your score "+ correctAnswer.toString();
+        score.textContent ="Your score: "+ correctAnswer.toString();
         setTimeout(function () {
 
 
@@ -369,8 +371,8 @@ function showQuestion(rand) {
         img.style.height="30px";
         feedback.appendChild(img);
 
-        score.textContent ="Your score :"+ correctAnswer.toString();
-        rbutton.nextElementSibling.style.color = "red"
+        score.textContent ="Your score: "+ correctAnswer.toString();
+        rbutton.nextElementSibling.style.color = "red";
         setTimeout(function () {
 
 
@@ -378,7 +380,7 @@ function showQuestion(rand) {
         }, 3000);
       }
 
-    })
+    });
 
     const label = document.createElement("label");
     label.classList.add(`label${num}`);
@@ -398,7 +400,7 @@ function showQuestion(rand) {
   
 
 
-  })
+  });
 }
 
 /**
@@ -442,7 +444,7 @@ function writePreviousScore(previousScore) {
       return 0;
     }
 
-  })
+  });
   
   let html = `<h2>Best 5 scores</h2>
   <table class="psscore">
@@ -463,7 +465,7 @@ let count=0;
     html += `<tr>
 <td>${previousScore[i].user}</td>
 <td>${previousScore[i].score}</td>
-</tr>`
+</tr>`;
 
 count++;
  }
@@ -483,7 +485,7 @@ function restartQuiz() {
   }
 
   correctAnswer = 0;
-  score.textContent ="Your score:" +correctAnswer;
+  score.textContent ="Your score: " +correctAnswer;
   pastQuestions=[];
   nextQuestion(1);
   previousS.display="none";
