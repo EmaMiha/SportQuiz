@@ -477,6 +477,10 @@ count++;
 }
 
 
+/**
+ * Allows the quiz to be restarted.
+ */
+
 function restartQuiz() {
 
   let b=confirm("Are you sure you want to start quiz again?");
