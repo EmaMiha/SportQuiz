@@ -9,7 +9,7 @@ The primary purpose of this site is to combine enjoyment with learning and socia
 
 ## Features
 
-Existing Features
+#### Existing Features
 
   ▪︎ Header
     
@@ -38,7 +38,7 @@ Existing Features
   ![Table image](assets/img/TableScores.png)
 
 
-Potential Features
+#### Potential Features
 
   ▪︎ I could improve the quiz with points system for unlocking new content.
 
@@ -72,14 +72,32 @@ Potential Features
 
 Solved bugs
 
-  ▪︎  When I deployed the quiz to GitHub pages I noticed that the background image did not work because I used absolute file path. 
+    ▪︎  When I deployed the quiz to GitHub pages I noticed that the background image did not work because I used absolute file path. 
 
-  ▪︎ I removed "/" and the issue was fixed.
+    ▪︎ I removed "/" and the issue was fixed.
 
 Unfixed Bugs
 
-  ▪︎ There is no unfixed bugs.
+    ▪︎ There is no unfixed bugs.
 
+## Deployment
+
+  ▪︎ The site was deployed to GitHub pages, the steps are:
+
+    ▫︎  In the GitHub repository, navigate to the Settings tab and then select Pages.
+
+    ▫︎  From the source section drop-down menu, select Main Branch and /(root) folder.
+
+    ▫︎  The live link can be found here: 
+
+       https://emamiha.github.io/SportQuiz/
+
+## Credits
+
+
+  ▪︎ Some of the questions were taken from tryinteract.com
+
+  ▪︎ Code Institute for CI template.
 
 
 
