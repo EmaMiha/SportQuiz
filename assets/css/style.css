@@ -13,23 +13,19 @@ html,body {
     background-size: 100% 100%;
     background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
     background-image: radial-gradient(49% 81% at 45% 47%, #FFE20345 0%, #073AFF00 100%),radial-gradient(113% 91% at 17% -2%, rgb(102, 255, 0) 1%, #FF000000 99%),radial-gradient(142% 91% at 83% 7%, #FFDB00FF 1%, #FF000000 99%),radial-gradient(142% 91% at -6% 74%, rgb(255, 123, 0) 1%, #FF000000 99%),radial-gradient(142% 91% at 111% 84%, #FF7000FF 0%, rgb(149, 255, 0) 100%);
-
 }
 
 
-a{
+a {
     text-decoration: none;
 }
 
-#quiz{
+#quiz {
     display:none;
 }
-#result{
-
+#result {
     display: none;
 }
-
-
 
 .container {
     display: flex;
@@ -42,29 +38,28 @@ a{
     border-radius: 5%;
     box-shadow: 0px 0px 5px 20px green;   
 }
-.wrapper{
 
+
+.wrapper {
     width: 60%;
     height: 70%;
     background-color: rgb(255, 230, 0);
     border-radius: 5%;
-    box-shadow: 0px 0px 5px 15px green;   
-    
+    box-shadow: 0px 0px 5px 15px green;     
 }
 
 
-#login{
+#login {
     height: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-#hed{
+
+#hed {
     font-family: 'Comic sans ms', 'Segoe UI', sans-serif;
      border-top-left-radius: 50%; 
-     border-top-right-radius: 50%;   
-    
+     border-top-right-radius: 50%;      
 }
 
    
@@ -74,72 +69,58 @@ a{
     height: 30px;
     border: none;
     box-shadow: 0 0 5px black;
-
 }
 
-.picx{
+.picx {
     border: 2px solid lightgreen ;
 }
 
 
-#login button,.restartQuiz{
-
+#login button,.restartQuiz {
     width: 15%;
     height: 30px;
     border: none;
-    box-shadow: 0 0 5px black;
-    
+    box-shadow: 0 0 5px black;  
 }
 
 
-
-#quiz,#login, .feedback,#results,#previousScores,#hed{
-
+#quiz, #login, .feedback, #results, #previousScores, #hed {
 width:100%;
 background-color: rgb(255, 230, 0);
 text-align: center;   
-
 }
 
 
-
-#quiz{
+#quiz {
     background-color: white;
-    border: 4px solid lightgreen;
-        
+    border: 4px solid lightgreen;       
 }
-.quizContainer{
 
+.quizContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.question{
+.question {
     font-size: 1.8em;
     text-align: center;
 }
 
-.answers{
-    
+.answers { 
     width: 60%;
     text-align: left;
     font-size: 1.2em;
 }
 
-.answers input{
+.answers input {
     margin-bottom: 10px;
     margin-right: 10px;
 }
 
 
-
-
-
-
 #previousScores{
-    
     margin-top: 5%;
     width: 100%;
     display: none;
@@ -147,33 +128,28 @@ text-align: center;
     font-size: 1.2em;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-   
+    flex-direction: column; 
 }
 
-.psscore{
+.psscore {
 text-align: center;
     width: 50%;
     border: 2px solid black;
 }
 
-.psscore  tr th{
+.psscore  tr th {
     background-color: green;
     height: 30px;
-
 }
 
 .psscore td {
-
     text-align: center;
     height: 25px;
-
 }
- .psscore tr:nth-child(even){
+
+ .psscore tr:nth-child(even) {
     background-color: white;
 }
-
-
 
 
  @media only screen and (max-width:992px) {
@@ -182,90 +158,66 @@ text-align: center;
         font-size: 0.7em;
     }
 
-    .answers{
-    
+    .answers {
         width: 60%;
         font-size: 0.8em;
     }
 
-    .question{
-        font-size: 1.4em;
-        
+    .question {
+        font-size: 1.4em;  
     }
  
-    #login button,.restartQuiz{
-
-        width: 20%;
-   
-        
+    #login button,.restartQuiz {
+        width: 20%; 
     }
  }
+
 
  @media only screen and (max-width:768px) {
 
     #login input {
- 
         width: 70%;
-      
     }
 
     login button,.restartQuiz{
-
-        width: 25%;
-   
-        
+        width: 25%;    
     }
 
-    .answers{
-    
-        
+    .answers {
         font-size: 0.6em;
     }
 
-    .question{
+    .question {
         font-size: 1.2em;
-        
     }
     button {
         font-size: 0.6em;
     }   
-    #previousScores{
-    
-       
+    #previousScores {
         font-size: 0.8em;
- 
-    }
-    .score{
-    
- font-size: 0.8em;
-    
     }
 
+    .score {
+        font-size: 0.8em;
+    }
     }    
  
 
     @media only screen and (max-width:576px) {
 
-     
-        #login button,.restartQuiz{
-    
+        #login button,.restartQuiz {
             width: 20%;
-       
-            
         }
     
-        .answers{
-        
-            
+        .answers {     
             font-size: 0.4em;
         }
     
         .question{
-            font-size: 1em;
-            
+            font-size: 1em;    
         }
+
         button {
             font-size: 0.5em;
         }   
-    
         }   
