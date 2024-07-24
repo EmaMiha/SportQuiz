@@ -1,5 +1,6 @@
-const questions = [{
-  question: 'Who won the Tour de France in 2023?',
+const questions = [
+  
+{   question: 'Who won the Tour de France in 2023?',
   answers: [
 
     { text: 'Jonas Vingegaard', correct: true },
@@ -200,12 +201,13 @@ const questions = [{
 },
 ];
 
-
+const numberQuestions=20;
 const inputUsername = document.querySelector(".username");
 const startQuizButton = document.querySelector(".startQuiz");
 const quizC = document.querySelector("#quiz");
 const login = document.querySelector("#login");
 const question = document.querySelector(".question");
+const numberQ=document.querySelector(".numq");
 const answers = document.querySelector(".answers");
 const score = document.querySelector(".score");
 const result = document.querySelector("#results")
@@ -271,6 +273,7 @@ function nextQuestion(n) {
     inputUsername.value='';
     quizC.style.display = "none";
     restart.style.display="none";
+    numberQ.style.display="none";
     score.textContent = "Your final score is "+correctAnswer.toString();
     result.style.display = 'block';
     login.style.display = "block";
@@ -306,6 +309,7 @@ function nextQuestion(n) {
 
 function showQuestion(rand) {
   restart.style.display="block";
+  numberQ.style.display="block";
          
   let rbut=document.querySelectorAll(".rbut");
   if (rbut){
@@ -317,6 +321,8 @@ function showQuestion(rand) {
 
 
   question.textContent = pastQuestions.length+"."+" " +questions[rand].question;
+  let numbering=pastQuestions.length +" of "+numberQuestions;
+  numberQ.textContent=numbering;
 
   let num = 0;
   answers.textContent = "";

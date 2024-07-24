@@ -72,8 +72,8 @@ The primary purpose of this site is to combine enjoyment with learning and socia
 
 Solved bugs
 
-    ▪︎  When I deployed the quiz to GitHub pages I noticed that the background image did not work because I used absolute file path. 
-
+    ▪︎  When I deployed the quiz to GitHub pages I noticed that the background image did      
+       not work because I used absolute file path. 
     ▪︎ I removed "/" and the issue was fixed.
 
 Unfixed Bugs
@@ -86,7 +86,8 @@ Unfixed Bugs
 
     ▫︎  In the GitHub repository, navigate to the Settings tab and then select Pages.
 
-    ▫︎  From the source section drop-down menu, select Main Branch and /(root) folder.
+    ▫︎  From the source section drop-down menu, select Main Branch, /(root) folder and
+       click on "Save".
 
     ▫︎  The live link can be found here: 
 
